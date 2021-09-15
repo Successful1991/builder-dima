@@ -1,3 +1,7 @@
+import gsap from 'gsap';
+
+console.log(gsap);
+gsap.from(document.body, { backgroundColor: 'red' });
 function init() {
   // eslint-disable-next-line no-undef
   const slider = new Swiper('.swiper-container', {

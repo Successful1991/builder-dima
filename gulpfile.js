@@ -1,4 +1,4 @@
-const proxy = "builder";
+const proxy = "builder-dima";
 let webPackSetting = true;
 let typeScriptSetting = false;
 
