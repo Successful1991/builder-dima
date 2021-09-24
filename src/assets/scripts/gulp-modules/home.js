@@ -1,6 +1,7 @@
 import gsap from 'gsap';
+import { langDetect } from '../modules/helpers/helpers';
 
-console.log(gsap);
+console.log(langDetect());
 gsap.from(document.body, { backgroundColor: 'red' });
 function init() {
   // eslint-disable-next-line no-undef
