@@ -29,11 +29,8 @@ const uglify = require('gulp-uglify-es').default;
 const cache = require('gulp-cache');
 const imagemin = require('gulp-imagemin');
 const imageminJpegRecompress = require('imagemin-jpeg-recompress');
-const imageminPngquant = require('imagemin-pngquant');
 //svg
 const svgSprites = require("gulp-svg-sprites");
-const cheerio = require('gulp-cheerio');
-const cleanSvg = require('gulp-cheerio-clean-svg');
 // eslint
 const eslint = require('gulp-eslint');
 
@@ -205,15 +202,6 @@ function static() {
 // svg-sprite
 function svgSprite() {
 		return gulp.src(paths.svgSprite.src)
-				// .pipe(cheerio({
-				// 	run: function ($) {
-				// 		$('[fill^="#"]').removeAttr('fill');
-				// 		$('[style]').removeAttr('style');
-				// 	},
-				// 	parserOptions: {
-				// 		xmlMode: false
-				// 	}
-				// }))
 				.pipe(svgSprites({
 					mode: "symbols",
 					preview: false,
@@ -416,11 +404,7 @@ function _images() {
 							quality: 'high'
 						}),
 						imagemin.svgo(),
-						imagemin.optipng(),
-						imageminPngquant({
-							quality: [0.85, 0.90],
-							speed: 5
-						})
+						imagemin.optipng()
 					], {
 						verbose: true
 					})))
